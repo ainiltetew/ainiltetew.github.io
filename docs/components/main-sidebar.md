@@ -3,15 +3,19 @@ layout: page
 title: Main Sidebar Component
 ---
 
-The sidebar used in this page to the left provides an example of what your sidebar would look like. Construction of a sidebar: 
+The sidebar used in this page to the left provides an example of what your sidebar would look like. Construction of a sidebar:
 
 ```html
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
   <!-- Brand Logo -->
   <a href="index3.html" class="brand-link">
-    <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-         style="opacity: .8">
+    <img
+      src="dist/img/AdminLTELogo.png"
+      alt="AdminLTE Logo"
+      class="brand-image img-circle elevation-3"
+      style="opacity: .8"
+    />
     <span class="brand-text font-weight-light">AdminLTE 3</span>
   </a>
 
@@ -20,7 +24,11 @@ The sidebar used in this page to the left provides an example of what your sideb
     <!-- Sidebar user panel (optional) -->
     <div class="user-panel mt-3 pb-3 mb-3 d-flex">
       <div class="image">
-        <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+        <img
+          src="dist/img/user2-160x160.jpg"
+          class="img-circle elevation-2"
+          alt="User Image"
+        />
       </div>
       <div class="info">
         <a href="#" class="d-block">Alexander Pierce</a>
@@ -29,7 +37,11 @@ The sidebar used in this page to the left provides an example of what your sideb
 
     <!-- Sidebar Menu -->
     <nav class="mt-2">
-      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
+      <ul
+        class="nav nav-pills nav-sidebar flex-column"
+        data-widget="treeview"
+        role="menu"
+      >
         <!-- Add icons to the links using the .nav-icon class
              with font-awesome or any other icon font library -->
         <li class="nav-item menu-open">
@@ -71,8 +83,8 @@ The sidebar used in this page to the left provides an example of what your sideb
   <!-- /.sidebar -->
 </aside>
 ```
-{: .max-height-300}
 
+{: .max-height-300}
 
 #### Alternate Logo
 
@@ -80,10 +92,20 @@ You can use two logo images instead of logo with text, you only need to change t
 
 ```html
 <a href="#" class="brand-link logo-switch">
-  <img src="dist/img/logo-xs.png" alt="AdminLTE Docs Logo Small" class="brand-image-xl logo-xs">
-  <img src="dist/img/logo-xl.png" alt="AdminLTE Docs Logo Large" class="brand-image-xs logo-xl" style="left: 12px">
+  <img
+    src="dist/img/logo-xs.png"
+    alt="AdminLTE Docs Logo Small"
+    class="brand-image-xl logo-xs"
+  />
+  <img
+    src="dist/img/logo-xl.png"
+    alt="AdminLTE Docs Logo Large"
+    class="brand-image-xs logo-xl"
+    style="left: 12px"
+  />
 </a>
 ```
+
 > Example from v3.0 docs.
 
 Based on the example above, you can replace `.brand-image-xl` on `.logo-xs` with `.brand-image-xs` or vice versa on `.logo-xl` for changed logo sizes.
@@ -95,10 +117,16 @@ You can place the pushmenu button inside the brand, simply replace the brand-lin
 ```html
 <div class="brand-link d-flex justify-content-between align-items-center">
   <a class="brand-link" href="index3.html">
-    <img src="dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3">
+    <img
+      src="dist/img/AdminLTELogo.png"
+      alt="AdminLTE Logo"
+      class="brand-image img-circle elevation-3"
+    />
     <span class="brand-text font-weight-light">AdminLTE 3</span>
   </a>
-  <a class="pushmenu" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+  <a class="pushmenu" data-widget="pushmenu" href="#" role="button"
+    ><i class="fas fa-bars"></i
+  ></a>
 </div>
 ```
 
@@ -109,7 +137,12 @@ You can add this code above user-panel or nav-sidebar:
 ```html
 <form class="form-inline">
   <div class="input-group">
-    <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+    <input
+      class="form-control form-control-sidebar"
+      type="search"
+      placeholder="Search"
+      aria-label="Search"
+    />
     <div class="input-group-append">
       <button class="btn btn-sidebar" type="submit">
         <i class="fas fa-search"></i>
@@ -118,8 +151,8 @@ You can add this code above user-panel or nav-sidebar:
   </div>
 </form>
 ```
-{: .max-height-300}
 
+{: .max-height-300}
 
 #### Sidebar Custom Area
 
@@ -135,9 +168,9 @@ You can simply add this code after the `div.sidebar`:
 ```
 
 > ##### Warning!
+>
 > The Sidebar Custom Area works only with `.layout-fixed` enabled.
-{: .quote-warning}
-
+> {: .quote-warning}
 
 #### Additional Classes
 
@@ -153,9 +186,9 @@ You can simply add this code after the `div.sidebar`:
 - `.nav-legacy` Legacy v2 nav style
 - `.nav-collapse-hide-child` Hide nav item submenus on collapsed sidebar
 
-
 > ##### Tip!
+>
 > You can also use `.text-sm` on `.nav-sidebar` or `.brand-link` for smaller font.
-{: .quote-info}
+> {: .quote-info}
 
-For more information about the JS part of the sidebar, please visit the [PushMenu plugin page]({% link javascript/push-menu.md %})
+For more information about the JS part of the sidebar, please visit the [PushMenu plugin page](/index.html)

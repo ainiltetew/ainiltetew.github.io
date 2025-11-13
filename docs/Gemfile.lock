@@ -64,7 +64,7 @@ GEM
       unicode-display_width (~> 1.1, >= 1.1.1)
     unicode-display_width (1.8.0)
     wdm (0.2.0)
-    webrick (1.7.0)
+    webrick (1.9.1)
 
 PLATFORMS
   ruby
@@ -74,8 +74,8 @@ DEPENDENCIES
   jekyll (~> 4.2.1)
   jekyll-seo-tag (~> 2.8.0)
   jekyll-sitemap (~> 1.4.0)
-  wdm (~> 0.2.0)
-  webrick (~> 1.7)
+    wdm (0.2.0)
+    webrick (1.9.1)
 
 BUNDLED WITH
    2.3.6

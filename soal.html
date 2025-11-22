@@ -5,6 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Himpunan</title>
 
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: #f5f5f5;
+        margin: 0;
+        padding: 20px;
+      }
+
+      .card {
+        background: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
+
+      h4 {
+        margin-top: 0;
+        color: #2a4d69;
+      }
+
+      .jawaban {
+        background: #eef7ff;
+        padding: 10px;
+        border-radius: 8px;
+        margin-top: 10px;
+        border-left: 4px solid #2a4d69;
+      }
+    </style>
     <!-- Google Font: Source Sans Pro -->
     <link
       rel="stylesheet"
@@ -205,7 +234,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="himpunan.html" class="nav-link active">
+                <a href="himpunan.html" class="nav-link">
                   <i class="nav-icon fas fa-th"></i>
                   <p>
                     Operasi
@@ -214,7 +243,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="soal.html" class="nav-link">
+                <a href="soal.html" class="nav-link active">
                   <i class="nav-icon fas fa-columns"></i>
                   <p>
                     Contoh Soal
@@ -254,139 +283,113 @@
 
         <!-- Main content -->
         <section class="content">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-8">
-                <div class="card">
-                  <div class="card-header">
-                    <div class="dt-buttons btn-group flex-wrap">
-                      <select class="form-control select-filter">
-                        <option data-filter="semua">Semua</option>
-                        <option data-filter="kosong">Kosong Ф</option>
-                        <option data-filter="ekuivalen">Ekuivalen A~B</option>
-                        <option data-filter="lepas">Saling Lepas A⁄⁄B</option>
-                        <option data-filter="kuasa">Kuasa P(A)</option>
-                      </select>
-                    </div>
-                  </div>
-                  <!-- /.card-header -->
-                  <div class="card-body">
-                    <table class="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th style="width: 10px">No</th>
-                          <th>Nama Himpunan</th>
-                          <th>Notasi</th>
-                          <th>Kardinalitas</th>
-                          <th style="width: 40px">Aksi</th>
-                        </tr>
-                      </thead>
-                      <tbody></tbody>
-                    </table>
-                  </div>
-                  <!-- /.card-body -->
-                  <div class="card-footer clearfix">
-                    <ul class="pagination pagination-sm m-0 float-right">
-                      <li class="page-item">
-                        <a class="page-link" href="#">&laquo;</a>
-                      </li>
-                      <li class="page-item">
-                        <a class="page-link" href="#">1</a>
-                      </li>
-                      <li class="page-item">
-                        <a class="page-link" href="#">2</a>
-                      </li>
-                      <li class="page-item">
-                        <a class="page-link" href="#">3</a>
-                      </li>
-                      <li class="page-item">
-                        <a class="page-link" href="#">&raquo;</a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
+          <!-- /.container-fluid -->
+
+          <!-- tulis apapun disini -->
+
+          <div class="content-grid">
+            <!-- Soal 1 -->
+            <div class="card">
+              <h4>
+                1. Tuliskan himpunan A yang berisi bilangan genap kurang dari
+                12.
+              </h4>
+              <div class="jawaban">
+                <b>Kunci Jawaban:</b> A = {2, 4, 6, 8, 10}
               </div>
-              <!-- /.col -->
-              <div class="col-md-4">
-                <div class="card card-primary">
-                  <div class="card-header">
-                    <h3 class="card-title">Form Himpunan</h3>
-                    <a class="float-right" style="cursor: pointer" id="ganti">
-                      <i class="fas fa-retweet"></i>
-                    </a>
-                  </div>
-                  <!-- /.card-header -->
-                  <!-- form start -->
-                  <form id="formHimpunan">
-                    <div class="card-body">
-                      <div class="form-group">
-                        <label for="nama">Nama Himpunan</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="nama"
-                          placeholder="Masukkan nama"
-                          required
-                        />
-                      </div>
+            </div>
 
-                      <div class="form-group">
-                        <label for="keterangan">Notasi</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="keterangan"
-                          placeholder="Notasi"
-                          required
-                        />
-                      </div>
-
-                      <div class="form-group">
-                        <label>Elemen</label>
-                        <!-- Wadah untuk semua input elemen -->
-                        <div id="elemen-container">
-                          <div class="input-group mb-2 elemen-item">
-                            <input
-                              type="text"
-                              class="form-control"
-                              placeholder="Elemen 1"
-                              required
-                            />
-                            <div class="input-group-append">
-                              <button
-                                type="button"
-                                class="btn btn-danger btn-delete"
-                              >
-                                <i class="fas fa-trash"></i>
-                              </button>
-                            </div>
-                          </div>
-                        </div>
-
-                        <!-- Tombol tambah elemen -->
-                        <button
-                          type="button"
-                          id="add-element"
-                          class="btn btn-block btn-success btn-xs"
-                        >
-                          +
-                        </button>
-                      </div>
-                    </div>
-
-                    <div class="card-footer">
-                      <button type="submit" class="btn btn-primary">
-                        Submit
-                      </button>
-                    </div>
-                  </form>
-                </div>
-                <!-- /.card -->
+            <!-- Soal 2 -->
+            <div class="card">
+              <h4>
+                2. Diketahui A = {1, 3, 5} dan B = {1, 2, 3, 4, 5}. Tentukan
+                apakah A ⊆ B dan jelaskan.
+              </h4>
+              <div class="jawaban">
+                <b>Kunci Jawaban:</b> Ya, A ⊆ B karena semua elemen A terdapat
+                di B.
               </div>
-              <!-- /.col -->
+            </div>
+
+            <!-- Soal 3 -->
+            <div class="card">
+              <h4>
+                3. Tentukan irisan dari A = {2, 4, 6, 8} dan B = {1, 2, 3, 4,
+                5}.
+              </h4>
+              <div class="jawaban"><b>Kunci Jawaban:</b> A ∩ B = {2, 4}</div>
+            </div>
+
+            <!-- Soal 4 -->
+            <div class="card">
+              <h4>
+                4. Diketahui U = {1, 2, 3, 4, 5, 6} dan A = {2, 3, 6}. Tentukan
+                komplemen dari A (Ā).
+              </h4>
+              <div class="jawaban"><b>Kunci Jawaban:</b> Ā = {1, 4, 5}</div>
+            </div>
+
+            <!-- Soal 5 -->
+            <div class="card">
+              <h4>
+                5. Tuliskan himpunan C yang berisi huruf vokal dalam kata
+                "MATEMATIKA".
+              </h4>
+              <div class="jawaban"><b>Kunci Jawaban:</b> C = {A, E, I}</div>
+            </div>
+
+            <!-- Soal 6 -->
+            <div class="card">
+              <h4>
+                6. Diberikan A = {a, b} dan B = {1, 2, 3}. Tuliskan seluruh
+                anggota dari A × B.
+              </h4>
+              <div class="jawaban">
+                <b>Kunci Jawaban:</b> A × B = {(a,1), (a,2), (a,3), (b,1),
+                (b,2), (b,3)}
+              </div>
+            </div>
+
+            <!-- Soal 7 -->
+            <div class="card">
+              <h4>
+                7. Tentukan gabungan dari A = {1, 4, 7} dan B = {2, 4, 6, 8}.
+              </h4>
+              <div class="jawaban">
+                <b>Kunci Jawaban:</b> A ∪ B = {1, 2, 4, 6, 7, 8}
+              </div>
+            </div>
+
+            <!-- Soal 8 -->
+            <div class="card">
+              <h4>
+                8. Jelaskan apa yang dimaksud dengan dua himpunan yang saling
+                lepas dan berikan contohnya.
+              </h4>
+              <div class="jawaban">
+                <b>Kunci Jawaban:</b>
+                Saling lepas = tidak memiliki elemen yang sama. Contoh: {1, 2,
+                3} dan {4, 5, 6}.
+              </div>
+            </div>
+
+            <!-- Soal 9 -->
+            <div class="card">
+              <h4>9. Tuliskan himpunan kuasa dari A = {1, 2}.</h4>
+              <div class="jawaban">
+                <b>Kunci Jawaban:</b> P(A) = { {}, {1}, {2}, {1,2} }
+              </div>
+            </div>
+
+            <!-- Soal 10 -->
+            <div class="card">
+              <h4>
+                10. Jika A = {1, 2, 3} dan B = {3, 4, 5}, tentukan selisih A −
+                B.
+              </h4>
+              <div class="jawaban"><b>Kunci Jawaban:</b> A − B = {1, 2}</div>
             </div>
           </div>
-          <!-- /.container-fluid -->
         </section>
         <!-- /.content -->
       </div>

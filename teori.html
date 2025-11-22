@@ -4,7 +4,210 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Himpunan</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      }
 
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      header {
+        text-align: center;
+        margin-bottom: 30px;
+        background-color: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      h1 {
+        color: #2c3e50;
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+
+      .author {
+        font-style: italic;
+        color: #7f8c8d;
+        font-size: 1.2rem;
+      }
+
+      .content-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 25px;
+      }
+
+      .card {
+        background-color: rgba(255, 255, 255, 0.95);
+        border-radius: 10px;
+        padding: 25px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+
+      .card-title {
+        color: #2c3e50;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #3498db;
+        display: flex;
+        align-items: center;
+      }
+
+      .card-title i {
+        margin-right: 10px;
+        color: #3498db;
+      }
+
+      .card-content {
+        flex-grow: 1;
+        line-height: 1.6;
+      }
+
+      .card-content p {
+        margin-bottom: 15px;
+      }
+
+      .card-content ul {
+        margin-left: 20px;
+        margin-bottom: 15px;
+      }
+
+      .card-content li {
+        margin-bottom: 8px;
+      }
+
+      .example-box {
+        background-color: #e8f4fc;
+        border-left: 4px solid #3498db;
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 0 5px 5px 0;
+      }
+
+      .definition-box {
+        background-color: #f0f7fd;
+        border: 1px solid #b8daff;
+        padding: 15px;
+        margin: 15px 0;
+        border-radius: 5px;
+      }
+
+      .math-notation {
+        font-family: "Cambria Math", serif;
+        font-size: 1.1rem;
+      }
+
+      .highlight {
+        background-color: #fffacd;
+        padding: 2px 5px;
+        border-radius: 3px;
+      }
+
+      .venn-container {
+        display: flex;
+        justify-content: center;
+        margin: 15px 0;
+      }
+
+      .venn-diagram {
+        position: relative;
+        width: 200px;
+        height: 150px;
+      }
+
+      .venn-circle {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.7;
+      }
+
+      .circle-a {
+        width: 100px;
+        height: 100px;
+        background-color: rgba(52, 152, 219, 0.5);
+        top: 25px;
+        left: 30px;
+      }
+
+      .circle-b {
+        width: 100px;
+        height: 100px;
+        background-color: rgba(231, 76, 60, 0.5);
+        top: 25px;
+        left: 70px;
+      }
+
+      .venn-label {
+        position: absolute;
+        font-weight: bold;
+      }
+
+      .label-a {
+        top: 50px;
+        left: 50px;
+      }
+
+      .label-b {
+        top: 50px;
+        left: 120px;
+      }
+
+      .symbol-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 15px 0;
+      }
+
+      .symbol-table th,
+      .symbol-table td {
+        border: 1px solid #dee2e6;
+        padding: 8px 12px;
+        text-align: left;
+      }
+
+      .symbol-table th {
+        background-color: #3498db;
+        color: white;
+      }
+
+      .symbol-table tr:nth-child(even) {
+        background-color: #f8f9fa;
+      }
+
+      footer {
+        text-align: center;
+        margin-top: 40px;
+        color: white;
+        padding: 20px;
+      }
+
+      @media (max-width: 768px) {
+        .content-grid {
+          grid-template-columns: 1fr;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+      }
+    </style>
     <!-- Google Font: Source Sans Pro -->
     <link
       rel="stylesheet"
@@ -158,7 +361,7 @@
       <!-- Main Sidebar Container -->
       <aside class="main-sidebar sidebar-dark-primary elevation-4">
         <!-- Brand Logo -->
-        <a href="#" class="brand-link">
+        <a href="index.html" class="brand-link">
           <img
             src="dist/img/MTK.jpeg"
             alt="AdminLTE Logo"
@@ -214,10 +417,10 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="soal.html" class="nav-link">
                   <i class="nav-icon fas fa-columns"></i>
                   <p>
-                    Catatan Tambahan
+                    Contoh Soal
                     <span class="right badge badge-danger"></span>
                   </p>
                 </a>
@@ -255,9 +458,477 @@
         <!-- Main content -->
         <section class="content">
           <!-- /.container-fluid -->
-          <p>
-            <!-- tulis apapun disini -->
-          </p>
+
+          <!-- tulis apapun disini -->
+
+          <div class="content-grid">
+            <!-- Card 1: Pengertian -->
+            <div class="card">
+              <h2 class="card-title"><i class="fas fa-book"></i> Pengertian</h2>
+              <div class="card-content">
+                <p>
+                  Himpunan adalah
+                  <span class="highlight"
+                    >kumpulan dari objek-objek yang berbeda</span
+                  >
+                  yang digunakan untuk mengelompokkan sejumlah objek.
+                </p>
+                <p>Objek-objek dalam himpunan dapat berupa:</p>
+                <ul>
+                  <li>Elemen</li>
+                  <li>Unsur</li>
+                  <li>Anggota</li>
+                </ul>
+                <div class="example-box">
+                  <p><strong>Contoh:</strong> A = {1, 2, 3, 4}</p>
+                  <p>
+                    Menggambarkan himpunan A terdiri dari 4 anggota/unsur/elemen
+                    yaitu 1, 2, 3, dan 4.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2: Himpunan Besar -->
+            <div class="card">
+              <h2 class="card-title">
+                <i class="fas fa-infinity"></i> Himpunan Besar
+              </h2>
+              <div class="card-content">
+                <p>
+                  Jika sebuah himpunan berukuran besar atau tak terbatas, bisa
+                  digambarkan dengan mendaftar sifat yang diperlukan untuk
+                  menjadi anggota.
+                </p>
+                <div class="example-box">
+                  <p><strong>Contoh:</strong></p>
+                  <p class="math-notation">
+                    B = { x | x bilangan bulat genap positif }
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3: Karakteristik Himpunan -->
+            <div class="card">
+              <h2 class="card-title">
+                <i class="fas fa-check-circle"></i> Karakteristik Himpunan
+              </h2>
+              <div class="card-content">
+                <div class="definition-box">
+                  <p><strong>Well-defined</strong></p>
+                  <p>
+                    Sebuah himpunan dikatakan <em>well-defined</em>, jika secara
+                    definitif dapat dinyatakan apakah suatu objek merupakan
+                    elemen atau bukan elemen dari himpunan tersebut.
+                  </p>
+                </div>
+                <div class="example-box">
+                  <p><strong>Contoh:</strong></p>
+                  <p>
+                    S = { beberapa bilangan asli } →
+                    <span class="highlight">bukan well-defined</span>
+                  </p>
+                  <p>
+                    S = { empat bilangan asli pertama } →
+                    <span class="highlight">well-defined</span> (elemen: 1, 2,
+                    3, 4)
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 4: Ekspresi Himpunan -->
+            <div class="card">
+              <h2 class="card-title">
+                <i class="fas fa-code"></i> Ekspresi Himpunan
+              </h2>
+              <div class="card-content">
+                <p>Sebuah himpunan dapat dinyatakan dengan:</p>
+                <ul>
+                  <li>Menyebutkan sifat-sifatnya</li>
+                  <li>Mendaftar elemen-elemennya</li>
+                </ul>
+                <div class="example-box">
+                  <p>Himpunan bilangan prima ≤ 5:</p>
+                  <p>{2, 3, 5} atau {x | x bilangan prima ≤ 5}</p>
+                </div>
+                <p>Notasi: a ∈ S (a adalah elemen S)</p>
+                <p>Himpunan kosong: Φ (tidak memiliki elemen)</p>
+              </div>
+            </div>
+
+            <!-- Card 5: Cara Penyajian Himpunan -->
+            <div class="card">
+              <h2 class="card-title">
+                <i class="fas fa-list"></i> Penyajian Himpunan
+              </h2>
+              <div class="card-content">
+                <p><strong>Enumerasi Elemen</strong></p>
+                <p>
+                  Menuliskan semua elemen himpunan di antara dua tanda kurung
+                  kurawal.
+                </p>
+                <div class="example-box">
+                  <p><strong>Contoh:</strong></p>
+                  <p>A = {1, 2, 3, 4}</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 6: Simbol-simbol Baku -->
+            <div class="card">
+              <h2 class="card-title">
+                <i class="fas fa-symbols"></i> Simbol-simbol Baku
+              </h2>
+              <div class="card-content">
+                <table class="symbol-table">
+                  <tr>
+                    <th>Simbol</th>
+                    <th>Himpunan</th>
+                  </tr>
+                  <tr>
+                    <td>P</td>
+                    <td>Bilangan bulat positif = {1, 2, 3, ...}</td>
+                  </tr>
+                  <tr>
+                    <td>N</td>
+                    <td>Bilangan alami (natural) = {1, 2, ...}</td>
+                  </tr>
+                  <tr>
+                    <td>Z</td>
+                    <td>Bilangan bulat = {..., -2, -1, 0, 1, 2, ...}</td>
+                  </tr>
+                  <tr>
+                    <td>Q</td>
+                    <td>Bilangan rasional</td>
+                  </tr>
+                  <tr>
+                    <td>R</td>
+                    <td>Bilangan riil</td>
+                  </tr>
+                  <tr>
+                    <td>C</td>
+                    <td>Bilangan kompleks</td>
+                  </tr>
+                </table>
+                <p>
+                  <strong>Himpunan Universal</strong>: semesta, disimbolkan
+                  dengan U.
+                </p>
+              </div>
+            </div>
+
+            <!-- Card 7: Notasi Pembentuk Himpunan -->
+            <div class="card">
+              <h2 class="card-title">
+                <i class="fas fa-edit"></i> Notasi Pembentuk Himpunan
+              </h2>
+              <div class="card-content">
+                <p>Notasi: {x | syarat yang harus dipenuhi oleh x}</p>
+                <ul>
+                  <li>Bagian di kiri '|' melambangkan elemen himpunan</li>
+                  <li>Tanda '|' dibaca "dimana" atau "sedemikian sehingga"</li>
+                  <li>Bagian di kanan '|' menunjukkan syarat keanggotaan</li>
+                  <li>Tanda ',' dalam syarat keanggotaan dibaca "dan"</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Card 8: Contoh Notasi Pembentuk -->
+            <div class="card">
+              <h2 class="card-title">
+                <i class="fas fa-tasks"></i> Contoh Notasi Pembentuk
+              </h2>
+              <div class="card-content">
+                <p>
+                  <strong>Contoh 1:</strong> A adalah himpunan bilangan bulat
+                  positif < 5
+                </p>
+                <ul>
+                  <li>
+                    A = {x | x adalah bilangan bulat positif yang kecil dari 5}
+                  </li>
+                  <li>A = {x | x ∈ P, x < 5}</li>
+                  <li>A = {1, 2, 3, 4}</li>
+                </ul>
+
+                <p>
+                  <strong>Contoh 2:</strong> B adalah himpunan bilangan genap
+                  positif ≤ 8
+                </p>
+                <ul>
+                  <li>
+                    B = {x | x adalah himpunan genap positif lebih kecil atau
+                    sama dari 8}
+                  </li>
+                  <li>B = {x | x/2 ∈ P, 2 ≤ x ≤ 8}</li>
+                  <li>B = {2, 4, 6, 8}</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Card 9: Diagram Venn -->
+            <div class="card">
+              <h2 class="card-title">
+                <i class="fas fa-project-diagram"></i> Diagram Venn
+              </h2>
+              <div class="card-content">
+                <p>Menyajikan himpunan secara grafis.</p>
+                <p>
+                  Himpunan semesta (U) digambarkan sebagai segi empat, himpunan
+                  lainnya sebagai lingkaran di dalam segi empat.
+                </p>
+
+                <div class="venn-container">
+                  <div class="venn-diagram">
+                    <div class="venn-circle circle-a"></div>
+                    <div class="venn-circle circle-b"></div>
+                    <div class="venn-label label-a">A</div>
+                    <div class="venn-label label-b">B</div>
+                  </div>
+                </div>
+
+                <div class="example-box">
+                  <p>
+                    <strong>Contoh:</strong> U = {1, 2, ..., 7, 8}, A = {1, 2,
+                    3, 5}, B = {2, 5, 6, 8}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 10: Relasi Himpunan -->
+            <div class="card">
+              <h2 class="card-title">
+                <i class="fas fa-sitemap"></i> Relasi Himpunan
+              </h2>
+              <div class="card-content">
+                <p><strong>Himpunan Bagian</strong></p>
+                <p>A ⊆ B jika setiap elemen A merupakan elemen B.</p>
+
+                <p><strong>Himpunan Sama</strong></p>
+                <p>A = B jika dan hanya jika A ⊆ B dan B ⊆ A.</p>
+
+                <div class="example-box">
+                  <p>
+                    <strong>Contoh:</strong> A = {1, 2, 3, 4} dan B = {3, 2, 4,
+                    1} adalah himpunan yang sama.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 11: Kardinalitas -->
+            <div class="card">
+              <h2 class="card-title">
+                <i class="fas fa-hashtag"></i> Kardinalitas
+              </h2>
+              <div class="card-content">
+                <p>
+                  Jumlah elemen dalam himpunan A disebut kardinal dari himpunan
+                  A.
+                </p>
+                <p>Notasi: n(A) atau |A|</p>
+
+                <div class="example-box">
+                  <p><strong>Contoh:</strong></p>
+                  <p>B = {x | x bilangan prima < 20}</p>
+                  <p>B = {2, 3, 5, 7, 11, 13, 17, 19}</p>
+                  <p>n(B) = 8</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 12: Himpunan Kosong -->
+            <div class="card">
+              <h2 class="card-title">
+                <i class="fas fa-ban"></i> Himpunan Kosong
+              </h2>
+              <div class="card-content">
+                <p>
+                  Himpunan yang tidak memiliki satupun elemen atau himpunan
+                  dengan kardinal = 0.
+                </p>
+                <p>Notasi: Φ atau {}</p>
+
+                <div class="example-box">
+                  <p><strong>Contoh:</strong></p>
+                  <p>E = {x | x < x}, maka n(E) = 0</p>
+                  <p>
+                    P = {orang Indonesia yang pernah ke bulan}, maka n(P) = 0
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 13: Himpunan Ekuivalen -->
+            <div class="card">
+              <h2 class="card-title">
+                <i class="fas fa-equals"></i> Himpunan Ekuivalen
+              </h2>
+              <div class="card-content">
+                <p>
+                  Himpunan A dikatakan ekuivalen dengan himpunan B jika dan
+                  hanya jika kardinal dari kedua himpunan tersebut sama.
+                </p>
+                <p>Notasi: A ~ B ↔ |A| = |B|</p>
+
+                <div class="example-box">
+                  <p><strong>Contoh:</strong></p>
+                  <p>A = {1, 3, 5, 7} dan B = {a, b, c, d}</p>
+                  <p>|A| = 4, |B| = 4, maka A ~ B</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 14: Himpunan Saling Lepas -->
+            <div class="card">
+              <h2 class="card-title">
+                <i class="fas fa-unlink"></i> Himpunan Saling Lepas
+              </h2>
+              <div class="card-content">
+                <p>
+                  Dua himpunan A dan B dikatakan saling lepas (disjoint) jika
+                  keduanya tidak memiliki elemen yang sama.
+                </p>
+                <p>Notasi: A // B</p>
+
+                <div class="example-box">
+                  <p><strong>Contoh:</strong></p>
+                  <p>A = {x | x ∈ P, x < 8} dan B = {20, 30, ...}</p>
+                  <p>Maka A // B</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 15: Himpunan Kuasa -->
+            <div class="card">
+              <h2 class="card-title">
+                <i class="fas fa-chess-queen"></i> Himpunan Kuasa
+              </h2>
+              <div class="card-content">
+                <p>
+                  Disebut juga powerset. Suatu himpunan A yang elemennya
+                  merupakan semua himpunan bagian dari A, termasuk himpunan
+                  kosong dan himpunan A sendiri.
+                </p>
+                <p>Notasi: P(A) atau 2^A</p>
+
+                <div class="example-box">
+                  <p><strong>Contoh:</strong> A = {1, 2}</p>
+                  <p>P(A) = { {}, {1}, {2}, {1, 2} }</p>
+                  <p>n(A) = 4</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 16: Operasi Himpunan -->
+            <div class="card">
+              <h2 class="card-title">
+                <i class="fas fa-calculator"></i> Operasi Himpunan
+              </h2>
+              <div class="card-content">
+                <p><strong>Irisan (Intersection)</strong></p>
+                <p>
+                  Himpunan yang setiap elemennya merupakan elemen dari himpunan
+                  A dan himpunan B.
+                </p>
+                <p>Notasi: A ∩ B = {x | x ∈ A dan x ∈ B}</p>
+
+                <p><strong>Gabungan (Union)</strong></p>
+                <p>
+                  Himpunan yang setiap anggotanya merupakan anggota himpunan A
+                  atau himpunan B.
+                </p>
+                <p>Notasi: A ∪ B = {x | x ∈ A atau x ∈ B}</p>
+              </div>
+            </div>
+
+            <!-- Card 17: Operasi Himpunan Lanjutan -->
+            <div class="card">
+              <h2 class="card-title">
+                <i class="fas fa-cogs"></i> Operasi Himpunan Lanjutan
+              </h2>
+              <div class="card-content">
+                <p><strong>Komplemen</strong></p>
+                <p>
+                  Himpunan yang elemennya merupakan elemen U yang bukan elemen
+                  A.
+                </p>
+                <p>Notasi: Ā = {x | x ∈ U dan x ∉ A}</p>
+
+                <p><strong>Selisih</strong></p>
+                <p>
+                  Himpunan yang elemennya merupakan elemen A dan bukan elemen B.
+                </p>
+                <p>Notasi: A - B = {x | x ∈ A dan x ∉ B} = A ∩ B̄</p>
+              </div>
+            </div>
+
+            <!-- Card 18: Beda Setangkup -->
+            <div class="card">
+              <h2 class="card-title">
+                <i class="fas fa-exchange-alt"></i> Beda Setangkup
+              </h2>
+              <div class="card-content">
+                <p>
+                  Himpunan yang elemennya ada pada himpunan A atau B tetapi
+                  tidak pada keduanya.
+                </p>
+                <p>Notasi: A ⊕ B = (A ∪ B) - (A ∩ B) = (A - B) ∪ (B - A)</p>
+              </div>
+            </div>
+
+            <!-- Card 19: Perkalian Kartesian -->
+            <div class="card">
+              <h2 class="card-title">
+                <i class="fas fa-times"></i> Perkalian Kartesian
+              </h2>
+              <div class="card-content">
+                <p>
+                  Himpunan yang elemennya semua pasangan berurutan (ordered
+                  pairs) yang mungkin terbentuk dengan komponen pertama dari
+                  himpunan A dan kedua dari himpunan B.
+                </p>
+                <p>Notasi: A × B = {(a, b) | a ∈ A dan b ∈ B}</p>
+
+                <div class="example-box">
+                  <p><strong>Contoh:</strong> C = {1, 2, 3} dan D = {a, b}</p>
+                  <p>
+                    C × D = {(1, a), (1, b), (2, a), (2, b), (3, a), (3, b)}
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 20: Sifat-sifat Operasi Himpunan -->
+            <div class="card">
+              <h2 class="card-title">
+                <i class="fas fa-list-ol"></i> Sifat Operasi Himpunan
+              </h2>
+              <div class="card-content">
+                <ul>
+                  <li>
+                    <strong>Hukum Identitas</strong>: A ∪ Φ = A, A ∩ U = A
+                  </li>
+                  <li>
+                    <strong>Hukum Komplemen</strong>: A ∪ Ā = U, A ∩ Ā = Φ
+                  </li>
+                  <li><strong>Hukum Involusi</strong>: (Ā) = A</li>
+                  <li><strong>Hukum Null</strong>: A ∩ Φ = Φ, A ∪ U = U</li>
+                  <li>
+                    <strong>Hukum Idempoten</strong>: A ∪ A = A, A ∩ A = A
+                  </li>
+                  <li>
+                    <strong>Hukum Penyerapan</strong>: A ∪ (A ∩ B) = A, A ∩ (A ∪
+                    B) = A
+                  </li>
+                  <li><strong>Hukum De Morgan</strong>: A ∪ B = Ā ∩ B̄</li>
+                </ul>
+              </div>
+            </div>
+          </div>
         </section>
         <!-- /.content -->
       </div>

@@ -548,6 +548,7 @@
       >
         <h2>Pengaturan Jadwal Masjid</h2>
         <div class="row-inline">
+          <button class="btn" onclick="window.location.href='https://drive.google.com/file/d/1HbziVk3VJYjfclkWwmsMHLkuwtt4sgl_/view?usp=sharing';">
           <button class="btn" id="btnSimpan">Simpan Pengaturan</button>
           <button class="btn" id="btnFullscreen">Mode Full Screen (TV)</button>
           <button class="btn close-btn" id="btnCloseNav">Tutup</button>
@@ -765,25 +766,6 @@
         </small>
       </div>
 
-      <h3>Edit Manual Waktu Sholat Hari Ini (untuk deteksi adzan)</h3>
-      <div class="panel-grid">
-        <div class="field">
-          <label>Subuh</label><input type="time" id="todaySubuh" />
-        </div>
-        <div class="field">
-          <label>Dzuhur</label><input type="time" id="todayDzuhur" />
-        </div>
-        <div class="field">
-          <label>Asar</label><input type="time" id="todayAsar" />
-        </div>
-        <div class="field">
-          <label>Magrib</label><input type="time" id="todayMagrib" />
-        </div>
-        <div class="field">
-          <label>Isya</label><input type="time" id="todayIsya" />
-        </div>
-      </div>
-
       <h3>Edit Manual Tabel (4 Hari Ditampilkan)</h3>
       <table class="edit-table" id="editTabelMingguan"></table>
 
@@ -907,6 +889,7 @@
 
         function renderPrayerCards() {
           var order = ["Subuh", "Dzuhur", "Asar", "Magrib", "Isya"];
+          var today = getDisplayDays()[0];
           var container = document.getElementById("jadwalCards");
           container.innerHTML = "";
           order.forEach(function (name) {
@@ -917,7 +900,7 @@
               '<div class="nama">' +
               name +
               '</div><div class="jam">' +
-              (state.todayPrayer[name] || "--:--") +
+              (today[name] || "--:--") +
               "</div>";
             container.appendChild(div);
           });
@@ -989,6 +972,7 @@
           tbody.innerHTML = bodyHtml;
 
           renderEditTable(days, todayISO);
+          renderPrayerCards();
         }
 
         function renderEditTable(days, todayISO) {
@@ -1050,13 +1034,6 @@
           document.getElementById("inpAudioUrl").value = state.audioUrl;
           document.getElementById("inpLat").value = state.coords.lat;
           document.getElementById("inpLng").value = state.coords.lng;
-          document.getElementById("todaySubuh").value = state.todayPrayer.Subuh;
-          document.getElementById("todayDzuhur").value =
-            state.todayPrayer.Dzuhur;
-          document.getElementById("todayAsar").value = state.todayPrayer.Asar;
-          document.getElementById("todayMagrib").value =
-            state.todayPrayer.Magrib;
-          document.getElementById("todayIsya").value = state.todayPrayer.Isya;
           document.getElementById("scheduleSource").value =
             state.scheduleSource;
           togglePanelSumberJadwal();
@@ -1096,21 +1073,6 @@
           state.audioUrl = document.getElementById("inpAudioUrl").value.trim();
           state.coords.lat = document.getElementById("inpLat").value.trim();
           state.coords.lng = document.getElementById("inpLng").value.trim();
-          state.todayPrayer.Subuh =
-            document.getElementById("todaySubuh").value ||
-            state.todayPrayer.Subuh;
-          state.todayPrayer.Dzuhur =
-            document.getElementById("todayDzuhur").value ||
-            state.todayPrayer.Dzuhur;
-          state.todayPrayer.Asar =
-            document.getElementById("todayAsar").value ||
-            state.todayPrayer.Asar;
-          state.todayPrayer.Magrib =
-            document.getElementById("todayMagrib").value ||
-            state.todayPrayer.Magrib;
-          state.todayPrayer.Isya =
-            document.getElementById("todayIsya").value ||
-            state.todayPrayer.Isya;
           state.scheduleSource =
             document.getElementById("scheduleSource").value;
         }
